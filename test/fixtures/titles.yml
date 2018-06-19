@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Emp_No: MyString
+  title: MyString
+  from_date: MyString
+  to_date: MyString
+
+two:
+  Emp_No: MyString
+  title: MyString
+  from_date: MyString
+  to_date: MyString
