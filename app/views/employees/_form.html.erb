@@ -11,6 +11,36 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :Emp_No %>
+    <%= form.number_field :Emp_No, id: :employee_Emp_No %>
+  </div>
+
+  <div class="field">
+    <%= form.label :First_Name %>
+    <%= form.text_field :First_Name, id: :employee_First_Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Last_Name %>
+    <%= form.text_field :Last_Name, id: :employee_Last_Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Birth_Date %>
+    <%= form.date_select :Birth_Date, id: :employee_Birth_Date, :start_year => 1970 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hire_date %>
+    <%= form.date_select :Hire_date, id: :employee_Hire_date, :start_year => 2015 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Gender %>
+    <%= form.select :Gender, Employee.Genders.keys%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

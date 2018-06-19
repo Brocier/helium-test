@@ -4,17 +4,21 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    @employees = Employee.all.order(Hire_date: :desc) #Most recent hire date first. Do :asc
+    @titles = Title.all
   end
 
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @titles = Title.all
   end
 
   # GET /employees/new
   def new
     @employee = Employee.new
+    @title = Title.new
+
   end
 
   # GET /employees/1/edit
@@ -67,8 +71,7 @@ class EmployeesController < ApplicationController
       @employee = Employee.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.fetch(:employee, {})
+      params.require(:employee).permit(:Emp_No, :First_Name, :Last_Name, :Hire_date, :Birth_Date, :Gender)
     end
 end
